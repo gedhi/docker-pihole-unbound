@@ -1,5 +1,9 @@
-ARG PIHOLE_VERSION
-FROM pihole/pihole:${PIHOLE_VERSION:-latest}
+FROM pihole/pihole:2024.07.0
+
+# Set the OCI Image Specification source label to the Pihole repository to enable tools 
+# like Renovate and Dependabot to automatically fetch release notes for new versions.
+LABEL org.opencontainers.image.source="https://github.com/pi-hole/pi-hole"
+
 RUN apt update && apt install -y unbound
 
 COPY lighttpd-external.conf /etc/lighttpd/external.conf 
@@ -9,4 +13,3 @@ RUN mkdir -p /etc/services.d/unbound
 COPY unbound-run /etc/services.d/unbound/run
 
 ENTRYPOINT ./s6-init
-
