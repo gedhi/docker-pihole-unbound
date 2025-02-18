@@ -1,4 +1,4 @@
-FROM pihole/pihole:2024.07.0
+FROM pihole/pihole:2025.02.0
 
 # Set the OCI Image Specification source label to the Pihole repository to enable tools 
 # like Renovate and Dependabot to automatically fetch release notes for new versions.
