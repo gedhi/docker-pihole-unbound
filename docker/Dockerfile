@@ -1,5 +1,5 @@
 FROM pihole/pihole:2025.03.0
-RUN apk update && apk install -y unbound
+RUN apk update && apk add -y unbound
 
 COPY lighttpd-external.conf /etc/lighttpd/external.conf 
 COPY unbound-pihole.conf /etc/unbound/unbound.conf.d/pi-hole.conf
