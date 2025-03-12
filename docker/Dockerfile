@@ -1,4 +1,4 @@
-FROM pihole/pihole:2024.07.0
+FROM pihole/pihole:2025.03.0
 RUN apk update && apk install -y unbound
 
 COPY lighttpd-external.conf /etc/lighttpd/external.conf 
